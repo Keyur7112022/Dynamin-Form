@@ -1,0 +1,79 @@
+<form class="row g-3">
+  <div class="col-md-4">
+    <label for="validationServer01" class="form-label">First name</label>
+    <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+
+
+    name: "base-input",
+  props: {
+    addonRightIcon: String,
+    addonLeftIcon: String,
+    append: String,
+    type: {
+      type: String,
+      default: "text",
+    },
+    value: {
+      type: String,
+      default: "",
+    },
+    placeholder: {
+      type: String,
+      default: "",
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    label: {
+      type: String,
+    },
+    required: {
+      type: Boolean,
+    },
+    disabled: {
+      type: Boolean,
+    },
+    alternative: {
+      type: Boolean,
+      description: "Whether input is of alternative layout",
+    },
+    labelClasses: {
+      type: String,
+      description: "Input label css classes",
+      default: "form-control-label",
+    },
+    inputGroupClasses: {
+      type: String,
+      default: "",
+    },
+    group: {
+      type: String,
+      default: "",
+    },
+    inputClasses: {
+      type: String,
+      default: "",
+    },
+  },
+
+
+
+   <input
+          class="form-control"
+          :name="name"
+          :id="name"
+          :type="type"
+          :placeholder="placeholder"
+          :required="required"
+          :disabled="disabled"
+          :value="inputValue"
+          @input="handleChange"
+          @blur="focused = false"
+          @focus="focused = true"
+          :class="inputClasses"
+        />
