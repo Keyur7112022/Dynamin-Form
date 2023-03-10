@@ -65,7 +65,7 @@ for (let i = 0; i < frmJson.length; i++) {
         frmHTML = `${frmHTML} 
         <div class="container d-xl-inline-flex justify-content-center w-100">
         <form class="row-md-3">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <label for="validationServer" class="form-label">${frmJson[i].label}</label>
           <input type="${frmJson[i].type}" class="${frmJson[i].class} " id="validationServer" value="" Required>
           <div class="invalid-feedback">
