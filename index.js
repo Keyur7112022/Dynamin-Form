@@ -4,6 +4,13 @@ let frmJson = [{
     class: 'form-control',
     label: 'First Name',
     validation: 'is-valid'
+},
+{
+    type: 'text',
+    id: 'txFName',
+    class: 'form-control',
+    label: 'First Name',
+    validation: 'is-valid'
 }, {
     type: 'text',
     id: 'txLName',
@@ -56,20 +63,24 @@ let frmHTML = '';
 for (let i = 0; i < frmJson.length; i++) {
     if (frmJson[i].type != 'button') {
         frmHTML = `${frmHTML} 
-        <form class="row-md-6">
-        <div class="col-md-4 align-items-center">
+        <div class="container d-xl-inline-flex justify-content-center w-100">
+        <form class="row-md-3">
+        <div class="col-md-6">
           <label for="validationServer" class="form-label">${frmJson[i].label}</label>
-          <input type="${frmJson[i].type}" class="${frmJson[i].class} ${frmJson[i].validation}" id="validationServer" value="" Required>
+          <input type="${frmJson[i].type}" class="${frmJson[i].class} " id="validationServer" value="" Required>
           <div class="invalid-feedback">
           Enter Valid Details
           </div>
           <div class="valid-feedback">
           Good 
           </div>
+        </div>
         </div>`;
     } else {
         frmHTML = `${frmHTML}
-        <button class="btn btn-primary btn-sm al gap-3" type="${frmJson[i].type}" onclick="onsaveclick()" >${frmJson[i].label}</button> `;
+        <div class="container d-flex justify-content-around">
+        <button class="btn btn-primary btn-sm al" type="${frmJson[i].type}" onclick="onsaveclick()" >${frmJson[i].label}</button> 
+        </div>`;
     }
 }
 document.getElementById('dynamicFrm').innerHTML = frmHTML;
